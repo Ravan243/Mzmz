@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>Ən Şirin Qız</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fce3ec, #ffe6fa);
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: #444;
+    }
+
+    #buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    button {
+      background-color: white;
+      border: 2px solid #ff7eb3;
+      color: #ff2d7a;
+      padding: 14px 22px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      background-color: #ff2d7a;
+      color: white;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Ən Şirin Qızı Seç</h1>
+
+  <div id="buttons">
+    <button onclick="select('Əsmər')">Əsmər</button>
+    <button onclick="select('Zəhra')">Zəhra</button>
+    <button onclick="select('Banu')">Banu</button>
+    <button onclick="select('Məryəm')">Məryəm</button>
+    <button onclick="select('Tərlan')">Tərlan</button>
+    <button onclick="select('Afət')">Afət</button>
+    <button onclick="select('Hüsniyyə')">Hüsniyyə</button>
+    <button onclick="select('Nurcan')">Nurcan</button>
+    <button onclick="select('Bahar')">Bahar</button>
+    <button onclick="select('Nərgiz')">Nərgiz</button>
+    <button onclick="select('Tağızadə Nərmin')">Tağızadə Nərmin</button>
+    <button onclick="select('Nülufər')">Nülufər</button>
+    <button onclick="select('Nuray')">Nuray</button>
+  </div>
+
+  <script>
+    function select(name) {
+      const token = "7594990560:AAE3vW8HwndmTA550iMfJqwWF7f4ncTuFkk";
+      const chatId = "7279747469";
+      const message = `Səs verildi: ${name}`;
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+        .then(() => alert(`${name} üçün səsin göndərildi!`));
+    }
+  </script>
+</body>
+</html>
